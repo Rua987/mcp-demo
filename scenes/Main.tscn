@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg5esvdwtdift"]
+
+[ext_resource type="PackedScene" uid="uid://dqtutsqjyqqm8" path="res://scenes/Player2D.tscn" id="1_elqb8"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="2_main"]
+[ext_resource type="Script" uid="uid://b5qh3pxxc2xeu" path="res://scenes/hud.gd" id="3_hud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
+size = Vector2(800, 40)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("2_main")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_elqb8")
+
+[node name="GroundVisual" type="ColorRect" parent="Ground"]
+offset_left = -400.0
+offset_top = -20.0
+offset_right = 400.0
+offset_bottom = 20.0
+color = Color(0.45, 0.35, 0.25, 1)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="Player2D" parent="." instance=ExtResource("1_elqb8")]
+position = Vector2(0, 140)
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -640.0
+offset_top = -600.0
+offset_right = 640.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.72, 0.68, 0.58, 1)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_hud")
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 12.0
+text = "Ere: Prehistoire  |  Os: 0 / 3"
+
+[node name="StatsLabel" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 36.0
+text = "Morts: 0  |  Temps: 0.0s"
+
+[node name="VictoryLabel" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -30.0
+offset_right = 200.0
+offset_bottom = 30.0
+text = "Victoire ! Entree pour continuer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseLabel" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -20.0
+offset_right = 120.0
+offset_bottom = 20.0
+text = "PAUSE - Echap pour reprendre"
+horizontal_alignment = 1
+vertical_alignment = 1

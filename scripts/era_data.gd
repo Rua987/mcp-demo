@@ -1,0 +1,82 @@
+class_name EraData
+extends RefCounted
+
+static func eras() -> Array:
+	return [
+		{
+			"id": "prehistory",
+			"name": "Prehistoire",
+			"collectible": "Os",
+			"total_coins": 3,
+			"background": Color(0.72, 0.68, 0.58),
+			"ground": Color(0.45, 0.35, 0.25),
+			"player_spawn": Vector2(0, 140),
+			"platforms": [Vector2(-160, 130), Vector2(160, 125)],
+			"moving_platforms": [],
+			"coins": [Vector2(-160, 105), Vector2(0, 95), Vector2(160, 100)],
+			"spikes": [Vector2(-300, 188)],
+		},
+		{
+			"id": "antiquity",
+			"name": "Antiquite",
+			"collectible": "Artefacts",
+			"total_coins": 4,
+			"background": Color(0.85, 0.78, 0.55),
+			"ground": Color(0.55, 0.48, 0.32),
+			"player_spawn": Vector2(-320, 140),
+			"platforms": [
+				Vector2(-180, 120),
+				Vector2(60, 100),
+				Vector2(260, 115),
+			],
+			"moving_platforms": [Vector2(0, 75)],
+			"coins": [
+				Vector2(-180, 95),
+				Vector2(60, 75),
+				Vector2(260, 90),
+				Vector2(320, 175),
+			],
+			"spikes": [Vector2(-120, 188), Vector2(200, 188)],
+		},
+		{
+			"id": "medieval",
+			"name": "Moyen Age",
+			"collectible": "Reliques",
+			"total_coins": 4,
+			"background": Color(0.75, 0.85, 0.95),
+			"ground": Color(0.25, 0.55, 0.35),
+			"player_spawn": Vector2(0, 140),
+			"platforms": [Vector2(-180, 120), Vector2(220, 110)],
+			"moving_platforms": [Vector2(0, 80)],
+			"coins": [
+				Vector2(-180, 95),
+				Vector2(0, 55),
+				Vector2(220, 85),
+				Vector2(320, 175),
+			],
+			"spikes": [Vector2(-280, 188), Vector2(120, 188)],
+		},
+		{
+			"id": "industrial",
+			"name": "Ere industrielle",
+			"collectible": "Engrenages",
+			"total_coins": 5,
+			"background": Color(0.35, 0.38, 0.42),
+			"ground": Color(0.45, 0.48, 0.52),
+			"player_spawn": Vector2(0, 140),
+			"platforms": [
+				Vector2(-220, 125),
+				Vector2(180, 120),
+				Vector2(-60, 95),
+			],
+			"moving_platforms": [Vector2(-80, 60), Vector2(140, 70)],
+			"coins": [
+				Vector2(-220, 100),
+				Vector2(-80, 35),
+				Vector2(140, 45),
+				Vector2(180, 95),
+				Vector2(300, 175),
+			],
+			"spikes": [Vector2(-350, 188), Vector2(-50, 188), Vector2(250, 188)],
+		},
+	]

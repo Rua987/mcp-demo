@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "godot": {
+      "command": "node",
+      "args": ["C:/Users/admin/tools/godot-mcp-server/node_modules/godot-mcp-server/dist/index.js"],
+      "env": {
+        "GODOT_PATH": "C:/ProgramData/chocolatey/lib/godot/tools/Godot_v4.6.1-stable_win64.exe"
+      }
+    }
+  }
+}

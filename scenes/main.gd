@@ -14,6 +14,7 @@ const SPIKE_SCENE := preload("res://scenes/Spike.tscn")
 
 
 func _ready() -> void:
+	Game.start_run()
 	Game.era_changed.connect(_build_level)
 	_build_level()
 

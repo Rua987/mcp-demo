@@ -77,9 +77,10 @@ func _update_deaths(_value: int) -> void:
 
 
 func _update_stats_line() -> void:
-	stats_label.text = "Morts: %d  |  Temps: %.1fs  |  Echap: Pause" % [
+	stats_label.text = "Morts: %d  |  Temps: %.1fs  |  CE coins=0x%08X" % [
 		Game.deaths,
 		_elapsed,
+		Game.ce_scan_coins,
 	]
 
 

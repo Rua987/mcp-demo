@@ -1,3 +1,9 @@
 .godot/
 *.import
 addons/godot_mcp/cache/
+scripts/__pycache__/
+__pycache__/
+*.pyc
+tmp_stdout.json
+tmp_stderr.txt
+reports/*.log

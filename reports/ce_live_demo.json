@@ -1,34 +1,52 @@
 {
   "generated_by": "scripts/ce_live_demo.py",
-  "started_at": "2026-07-08T01:29:42.887895+00:00",
+  "started_at": "2026-07-08T04:20:18.668025+00:00",
   "steps": [
     {
       "name": "ce_pipe",
       "ok": true,
-      "ts": "2026-07-08T01:29:42.888010+00:00",
+      "ts": "2026-07-08T04:20:18.668127+00:00",
       "pipe": "\\\\.\\pipe\\CE_MCP_Bridge_v99"
     },
     {
       "name": "godot_process",
       "ok": true,
-      "ts": "2026-07-08T01:29:42.922552+00:00"
+      "ts": "2026-07-08T04:20:18.704291+00:00"
     },
     {
       "name": "ce_workflow",
       "ok": true,
-      "ts": "2026-07-08T01:29:43.255712+00:00",
-      "elapsed_s": 0.33,
-      "stdout_tail": "otProjects\\mcp-demo\\scripts\\game.gd\nera_data.gd  : C:\\Users\\admin\\Documents\\GodotProjects\\mcp-demo\\scripts\\era_data.gd\nOK   CE_SCAN_COINS = 0xCE0DE000\nOK   CE_SCAN_DEATHS = 0xCE0DE100\nOK   formule coins = ce_scan_coins - CE_SCAN_COINS presente\nOK   formule deaths = ce_scan_deaths - CE_SCAN_DEATHS presente\nOK   total_coins par ere = [3, 4, 4, 5]\nResultat : SUCCES\n== CE workflow ==\nOK   Godot anchor files\nOK   snapshot: coins=3 deaths=0 0xCE0DE003 era=0 expected=3 match=True\n== CE workflow PASS =="
+      "ts": "2026-07-08T04:20:19.079420+00:00",
+      "elapsed_s": 0.38,
+      "stdout_tail": "ocuments\\GodotProjects\\mcp-demo\\scripts\\era_data.gd\nOK   CE_SCAN_COINS = 0xCE0DE000\nOK   CE_SCAN_DEATHS = 0xCE0DE100\nOK   formule coins = ce_scan_coins - CE_SCAN_COINS presente\nOK   formule deaths = ce_scan_deaths - CE_SCAN_DEATHS presente\nOK   total_coins par ere = [3, 4, 4, 5]\nResultat : SUCCES\n== CE workflow ==\nOK   Godot anchor files\nOK   snapshot: coins=3 deaths=0 0xCE0DE003 era=0 expected=3 match=True\n== CE workflow PASS ==\nNext: .\\scripts\\ce_live_demo.ps1 -SkipPytest  (Godot F5 + CE pipe)"
     },
     {
       "name": "ce_write_live",
       "ok": true,
-      "ts": "2026-07-08T01:30:25.023332+00:00",
-      "elapsed_s": 41.77,
-      "raw_stdout": "PID 3392: 11 adresse(s) ce_scan vÃ©rifiÃ©e(s)\n  game PID 3392 addr 0x2101DD081D0 (ce_scan â†’ 3457015811, coins encore 0)\n{\n  \"ok\": true,\n  \"game_pid\": 3392,\n  \"pids\": [\n    408,\n    3392\n  ],\n  \"addr\": \"0x2101DD081D0\",\n  \"coins_before\": 0,\n  \"coins_after\": 2,\n  \"ce_scan_before\": 3457015808,\n  \"ce_scan_after\": 3457015810,\n  \"era_before\": 1,\n  \"era_after\": 1,\n  \"target\": 2,\n  \"write_val_hex\": \"0xce0de002\",\n  \"skip_prepare\": true,\n  \"no_reset\": true\n}",
-      "stderr": "est                                   \n[07/07/26 15:30:24] INFO     Processing request of type           server.py:674\n                             CallToolRequest                                   \n                    INFO     Processing request of type           server.py:674\n                             CallToolRequest                                   \n[godot-mcp-server] Proxy shutting down..."
+      "ts": "2026-07-08T04:22:38.046800+00:00",
+      "elapsed_s": 138.97,
+      "result": {
+        "ok": true,
+        "game_pid": 3392,
+        "pids": [
+          408,
+          3392,
+          13348
+        ],
+        "addr": "0x2101DD081D0",
+        "coins_before": 2,
+        "coins_after": 2,
+        "ce_scan_before": 3457015810,
+        "ce_scan_after": 3457015810,
+        "era_before": 1,
+        "era_after": 1,
+        "target": 2,
+        "write_val_hex": "0xce0de002",
+        "skip_prepare": true,
+        "no_reset": true
+      }
     }
   ],
   "ok": true,
-  "finished_at": "2026-07-08T01:30:25.023349+00:00"
+  "finished_at": "2026-07-08T04:22:38.046821+00:00"
 }

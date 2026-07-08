@@ -65,6 +65,7 @@ def main() -> int:
         return 1
     print("OK   snapshot:", snap.stdout.strip())
     print("== CE workflow PASS ==")
+    print("Next: .\\scripts\\ce_live_demo.ps1 -SkipPytest  (Godot F5 + CE pipe)")
     return 0
 
 

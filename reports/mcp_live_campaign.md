@@ -81,9 +81,26 @@ Style T3MP3ST : recon → exécution → preuves reproductibles.
 | VictoryLabel | visible | **hidden** |
 | Screenshot | — | `campaign_era1_antiquite.png` |
 
-**Note :** `ce_godot_coins_write.py` appelle `stop_scene` + `run_scene` → remet l'ère à 0. Pour tester CE write **sans** reset, attacher CE manuellement pendant le jeu sans relancer le script de prep.
+**Note (résolu P1) :** `ce_godot_coins_write.py` avec `--skip-prepare --no-reset` conserve l'ère en cours. Voir Phase 4.
 
-CE write post-transition (script prep) : coins=4, `0xCE0DE004`, ok=true — mais scène repartie en Préhistoire (effet secondaire du harness, pas du jeu).
+CE write post-transition (script prep sans flags) : coins=4, `0xCE0DE004`, ok=true — mais scène repartie en Préhistoire (effet du harness `stop_scene`+`run_scene`).
+
+## Phase 4 — Démo reproductible `ce_live_demo` (2026-07-08)
+
+| Step | Preuve |
+|------|--------|
+| Commande | `python scripts/ce_live_demo.py --write-target 2 --skip-pytest` |
+| Flags CE | `--skip-prepare --no-reset` (ère préservée) |
+| `era_before` / `era_after` | **1 / 1** (Antiquité inchangée) |
+| `coins_before` / `coins_after` | **0 → 2** |
+| `write_val_hex` | `0xce0de002` |
+| Receipt JSON | `reports/ce_live_demo.json` (`ok: true`) |
+| Tests offline | `pytest scripts/test_ce_live_demo.py` — 4 passed |
+
+```powershell
+# Godot ouvert sur mcp-demo, F5 en jeu, CE pipe actif
+.\scripts\ce_live_demo.ps1 -SkipPytest
+```
 
 ## Rejouer
 
@@ -92,5 +109,7 @@ CE write post-transition (script prep) : coins=4, `0xCE0DE004`, ok=true — mais
 # Terminal 2 :
 cd C:\Users\admin\Documents\GodotProjects\mcp-demo
 python scripts/ce_workflow.py
+# Live CE write + receipt (Godot F5 + CE pipe) :
+.\scripts\ce_live_demo.ps1 -SkipPytest
 # Puis via MCP : run_scene → query_runtime_node → take_screenshot → stop_scene
 ```
